@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-10 14:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: people.py:65
+msgid "Name"
+msgstr ""
+
+#: people.py:65
+msgid "forname"
+msgstr ""
+
+#: people.py:65
+msgid "email"
+msgstr ""
+
+#: people.py:65
+msgid "nickname"
+msgstr ""
+
+#: gui.glade.h:1
+msgid "<b>ICQ number:</b>"
+msgstr ""
+
+#: gui.glade.h:2
+msgid "<b>aim account:</b>"
+msgstr ""
+
+#: gui.glade.h:3
+msgid "<b>city:</b>"
+msgstr ""
+
+#: gui.glade.h:4
+msgid "<b>company:</b>"
+msgstr ""
+
+#: gui.glade.h:5
+msgid "<b>contactname:</b>"
+msgstr ""
+
+#: gui.glade.h:6
+msgid "<b>country:</b>"
+msgstr ""
+
+#: gui.glade.h:7
+msgid "<b>email:</b>"
+msgstr ""
+
+#: gui.glade.h:8
+msgid "<b>fax:</b>"
+msgstr ""
+
+#: gui.glade.h:9
+msgid "<b>forename:</b>"
+msgstr ""
+
+#: gui.glade.h:10
+msgid "<b>jabber account:</b>"
+msgstr ""
+
+#: gui.glade.h:11
+msgid "<b>msn live:</b>"
+msgstr ""
+
+#: gui.glade.h:12
+msgid "<b>name:</b>"
+msgstr ""
+
+#: gui.glade.h:13
+msgid "<b>nickname:</b>"
+msgstr ""
+
+#: gui.glade.h:14
+msgid "<b>path:</b>"
+msgstr ""
+
+#: gui.glade.h:15
+msgid "<b>postal code:</b>"
+msgstr ""
+
+#: gui.glade.h:16
+msgid "<b>street number:</b>"
+msgstr ""
+
+#: gui.glade.h:17
+msgid "<b>street:</b>"
+msgstr ""
+
+#: gui.glade.h:18
+msgid "<b>telephone:</b>"
+msgstr ""
+
+#: gui.glade.h:19
+msgid "<b>website:</b>"
+msgstr ""
+
+#: gui.glade.h:20
+msgid "PeopleEdit"
+msgstr ""
+
+#: gui.glade.h:21
+msgid "business"
+msgstr ""
+
+#: gui.glade.h:22
+msgid "online"
+msgstr ""
+
+#: gui.glade.h:23
+msgid "picture"
+msgstr ""
+
+#: gui.glade.h:24
+msgid "privat"
+msgstr ""
+
+#: gui.glade.h:25
+msgid "send mail"
+msgstr ""
+
+#: gui.glade.h:26
+msgid "visit page"
+msgstr ""

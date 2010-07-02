@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PeopleEdit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-23 18:23+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Stefan Luedtke <gandalf@silver-boards.de>\n"
+"Language-Team: Stefan Lüdtke <gandalf@silver-boards.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+
+#: people.py:67
+msgid "Name"
+msgstr "name"
+
+#: people.py:67
+msgid "forname"
+msgstr "forename"
+
+#: people.py:67
+msgid "email"
+msgstr "email"
+
+#: people.py:67
+msgid "nickname"
+msgstr "nickname"
+
+#: gui.glade.h:1
+msgid "<b>contactname:</b>"
+msgstr "<b>contactname:</b>"
+
+#: gui.glade.h:2
+msgid "<b>email:</b>"
+msgstr "<b>email:</b>"
+
+#: gui.glade.h:3
+msgid "<b>forename:</b>"
+msgstr "<b>forename:</b>"
+
+#: gui.glade.h:4
+msgid "<b>name:</b>"
+msgstr "<b>name:</b>"
+
+#: gui.glade.h:5
+msgid "<b>nickname:</b>"
+msgstr "<b>nickname:</b>"
+
+#: gui.glade.h:6
+msgid "E-mail senden"
+msgstr "send mail"
+
+#: gui.glade.h:7
+msgid "PeopleEdit"
+msgstr "PeopleEdit"
+
+#: gui.glade.h:8
+msgid "business"
+msgstr "business"
+
+#: gui.glade.h:9
+msgid "online"
+msgstr "online"
+
+#: gui.glade.h:10
+msgid "picture"
+msgstr "picture"
+
+#: gui.glade.h:11
+msgid "privat"
+msgstr "privat"
+

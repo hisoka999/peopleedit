@@ -1,0 +1,215 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Stefan LÃŒdtke <gandalf@silver-boards.de>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-11 17:00+0200\n"
+"PO-Revision-Date: 2010-05-11 17:15+0100\n"
+"Last-Translator: Stefan Luedtke <gandalf@silver-boards.de>\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: people.py:76
+msgid "Name"
+msgstr "Name"
+
+#: people.py:76
+msgid "forname"
+msgstr "Vorname"
+
+#: people.py:76
+msgid "email"
+msgstr "E-Mail"
+
+#: people.py:76
+msgid "nickname"
+msgstr "Spitzname"
+
+#: people.glade.h:1
+msgid "<b>Details</b>"
+msgstr "<b>Details</b>"
+
+#: people.glade.h:2
+msgid "<b>ICQ number:</b>"
+msgstr "<b>ICQ Nummer:</b>"
+
+#: people.glade.h:3
+msgid "<b>aim account:</b>"
+msgstr "<b>AIM Account:</b>"
+
+#: people.glade.h:4
+msgid "<b>city:</b>"
+msgstr "<b>Stadt:</b>"
+
+#: people.glade.h:5
+msgid "<b>company:</b>"
+msgstr "<b>Firma:</b>"
+
+#: people.glade.h:6
+msgid "<b>contactname:</b>"
+msgstr "<b>Kontaktname:</b>"
+
+#: people.glade.h:7
+msgid "<b>country:</b>"
+msgstr "<b>Land:</b>"
+
+#: people.glade.h:8
+msgid "<b>email:</b>"
+msgstr "<b>E-Mail:</b>"
+
+#: people.glade.h:9
+msgid "<b>fax:</b>"
+msgstr "<b>Fax:</b>"
+
+#: people.glade.h:10
+msgid "<b>forename:</b>"
+msgstr "<b>Vorname:</b>"
+
+#: people.glade.h:11
+msgid "<b>jabber account:</b>"
+msgstr "<b>Jabber Addresse:</b>"
+
+#: people.glade.h:12
+msgid "<b>msn live:</b>"
+msgstr "<b>MSN Live:</b>"
+
+#: people.glade.h:13
+msgid "<b>name:</b>"
+msgstr "<b>Name:</b>"
+
+#: people.glade.h:14
+msgid "<b>nickname:</b>"
+msgstr "<b>Spitzname:</b>"
+
+#: people.glade.h:15
+#: gui/options.glade.h:2
+msgid "<b>path:</b>"
+msgstr "<b>Pfad:</b>"
+
+#: people.glade.h:16
+msgid "<b>postal code:</b>"
+msgstr "<b>Postleitzahl:</b>"
+
+#: people.glade.h:17
+msgid "<b>search:</b>"
+msgstr "<b>Suche:</b>"
+
+#: people.glade.h:18
+msgid "<b>street number:</b>"
+msgstr "<b>Hausnummer:</b>"
+
+#: people.glade.h:19
+msgid "<b>street:</b>"
+msgstr "<b>Straße:</b>"
+
+#: people.glade.h:20
+msgid "<b>telephone:</b>"
+msgstr "<b>Telefon:</b>"
+
+#: people.glade.h:21
+msgid "<b>website:</b>"
+msgstr "<b>Webseite:</b>"
+
+#: people.glade.h:22
+msgid "PeopleEdit"
+msgstr "PeopleEdit"
+
+#: people.glade.h:23
+msgid "_Edit"
+msgstr "_Bearbeiten"
+
+#: people.glade.h:24
+msgid "_File"
+msgstr "_Datei"
+
+#: people.glade.h:25
+msgid "_Help"
+msgstr "_Hilfe"
+
+#: people.glade.h:26
+msgid "about peopleedit"
+msgstr "Über PeopleEdit"
+
+#: people.glade.h:27
+msgid "business"
+msgstr "betrieblich"
+
+#: people.glade.h:28
+msgid "delete"
+msgstr "löschen"
+
+#: people.glade.h:29
+msgid "export"
+msgstr "Exportieren"
+
+#: people.glade.h:30
+msgid "export as a vCard"
+msgstr "Exportieren als vCard"
+
+#: people.glade.h:31
+msgid "import"
+msgstr "Importieren"
+
+#: people.glade.h:32
+msgid "import vCard"
+msgstr "Importiere vCard"
+
+#: people.glade.h:33
+msgid "new"
+msgstr "Neu"
+
+#: people.glade.h:34
+msgid "online"
+msgstr "Online"
+
+#: people.glade.h:35
+msgid "options dialog"
+msgstr "Optionsdialog"
+
+#: people.glade.h:36
+msgid "picture"
+msgstr "Bild"
+
+#: people.glade.h:37
+msgid "privat"
+msgstr "Privat"
+
+#: people.glade.h:38
+msgid "save"
+msgstr "Speichern"
+
+#: people.glade.h:39
+msgid "send mail"
+msgstr "E-Mail senden"
+
+#: people.glade.h:40
+msgid "show"
+msgstr "anzeigen"
+
+#: people.glade.h:41
+msgid "visit page"
+msgstr "Seite besuchen"
+
+#: gui/options.glade.h:1
+msgid "<b>backend:</b>"
+msgstr "<b>Backend:</b>"
+
+#: gui/options.glade.h:3
+msgid "backend"
+msgstr "Backend"
+
+#: gui/options.glade.h:4
+msgid "email:"
+msgstr "E-Mail:"
+
+#: gui/options.glade.h:5
+msgid "programs"
+msgstr "Programme"
+
