@@ -6,7 +6,7 @@ Created on 17.02.2010
 import gtk
 import os
 from backend.config import * 
-
+print myconfig
 class OptionsDialog:
     '''
         this dialog is for changing all important options
