@@ -8,6 +8,8 @@ import os
 
 global myconfig
 home = os.getenv('USERPROFILE') or os.getenv('HOME')
+if (not os.path.exists(home+'/.config/peopleedit')):
+    os.makedirs(home+'/.config/peopleedit', 0777)
 class Config(dict):
     
     backend = ""

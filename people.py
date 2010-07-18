@@ -80,6 +80,7 @@ class PeopleEdit:
     config = None
     path = os.path.dirname(__file__) or "."
     def __init__(self):
+        global home
         """
         
         """
@@ -220,7 +221,7 @@ class PeopleEdit:
         self.listfilter.refilter()
     
     def visible_cb(self, model, iter, data):
-        if len(data)>0:
+        if len(data)>0 and model.get_value(iter, 0)!= None:
             cont= model.get_value(iter, 0).content
             for tmp in cont:
                 if str(cont[tmp]).find(data[0])>-1:

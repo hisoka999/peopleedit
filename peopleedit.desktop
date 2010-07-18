@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=peopleEdit
+Comment=simple contact editor
+Exec=peopleedit
+Icon=peopleedit.png
+Terminal=false
+Type=Application
+Categories=Office;Application;
+Name[de_DE]=peopleedit.desktop
