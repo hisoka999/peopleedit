@@ -583,7 +583,10 @@ class PeopleEdit:
             return None
         tmp = model.get_value(iter, 0)
         if (len(tmp.webpage) > 0):
-            pid = subprocess.Popen([browser, tmp.webpage]).pid
+            page = tmp.webpage
+            if(not page.startswith('http')):
+                page='http://'+page
+            pid = subprocess.Popen([browser, page]).pid
             
     def vcard_menu_export(self,widget):
         treeselection = self.treeview.get_selection()
