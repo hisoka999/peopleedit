@@ -47,8 +47,13 @@ from backend.config import *
 # import gui stuff
 from gui.options import OptionsDialog
 APP_DIR = os.path.dirname(__file__) or "."
+if(APP_DIR =="/usr/bin"):
+    APP_DIR = "/usr/share/peopleedit"
+    LOCALE_DIR = '/usr/share/locale'
+else:
+    LOCALE_DIR = APP_DIR+'/locale'
 APP_NAME = 'people'
-LOCALE_DIR = APP_DIR+'/locale'
+
 try:
     locale.setlocale(locale.LC_ALL, '')
 except:
@@ -76,9 +81,9 @@ except:
 class PeopleEdit:
     column_names = [_('Name'), _('forname'), _('email'), _('nickname')]
     selected = None
-    version = "2.0 Beta"
+    version = "0.1"
     config = None
-    path = os.path.dirname(__file__) or "."
+    path = APP_DIR
     def __init__(self):
         global home
         """

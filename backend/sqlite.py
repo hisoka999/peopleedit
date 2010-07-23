@@ -41,7 +41,6 @@ except:
 
 class SQLiteContact(contact.Contact):
     def __init__(self, cursor, content):
-        print content
         contact.Contact.__init__(self, content)
         self.cursor = cursor
 
