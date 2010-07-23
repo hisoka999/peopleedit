@@ -1,9 +1,9 @@
 NAME = peopleedit
-#BUILDDIR = /tmp/$(NAME)/
-DATADIR = /usr/share
-LOCALE_DIR = /usr/share/locale
-BIN_DIR = /usr/bin
-IMG_DIR = /usr/share/pixmaps
+
+DATADIR = $(ROOT)/share
+LOCALE_DIR = $(ROOT)/share/locale
+BIN_DIR = $(ROOT)/bin
+IMG_DIR = $(ROOT)/share/pixmaps
 
 all:    peopleedit
     
@@ -11,13 +11,16 @@ peopleedit:
 	python -m compileall .
 
 install: 
-	mkdir $(DATADIR)/$(NAME)
+	mkdir -p $(DATADIR)/$(NAME)
+	mkdir -p $(LOCALE_DIR)
+	mkdir -p $(BIN_DIR)
+	mkdir -p $(IMG_DIR)
 	cp -R *.py *.pyc *.glade gui/ backend/ libs/ $(DATADIR)/$(NAME)
 	cp -R locale/* $(LOCALE_DIR)
-	ln -s $(DATADIR)/$(NAME)/people.py $(BIN_DIR)/peopleedit
+	ln -s /usr/share/$(NAME)/people.py $(BIN_DIR)/peopleedit
 	install -D -m 0644 peopleedit.desktop $(DATADIR)/applications/peopleedit.desktop
 	install -D -m 0644 peopleedit.png $(DATADIR)/pixmaps/peopleedit.png	
-	chmod +x $(DATADIR)people.py
+	chmod +x $(DATADIR)/$(NAME)/people.py
 
 clean:
 	find . -iname '*.pyc' -exec rm {} \;
