@@ -1,16 +1,15 @@
-Package: peopleedit
-Version: 2.0beta
+Source: peopleedit
+Version: 0.1
 Section: office
-Priority: optional
+Priority: extra
+Maintainer: Stefan Lüdtke <hisoka999@googlemail.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: http://code.google.com/p/peopleedit/
+
+Package: peopleedit
 Architecture: all
-Essential: no
-Depends: libsqlite3-0, python(>=2.5), python-pysqlite2(>=2.5), python-glade2, python-gtk2
-code-Depends:
-Recommends: 
-Suggests:
-Installed-Size: 25
-Maintainer: Stefan Luedtke <gandalf@silver-boards.de>
-Conflicts:
 Replaces: peopleedit
 Provides: peopleedit
+Depends: libsqlite3-0, python(>=2.5), python-pysqlite2(>=2.5), python-glade2, python-gtk2
 Description: peopleedit is an simple contact tool for gtk2.
