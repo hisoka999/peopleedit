@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/base">
+        <file>peopleedit.png</file>
+    </qresource>
+</RCC>
