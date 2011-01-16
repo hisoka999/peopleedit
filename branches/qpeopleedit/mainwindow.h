@@ -24,6 +24,8 @@ private:
     Ui::MainWindow *ui;
     SqlModel *model;
     QSqlDatabase db;
+    QModelIndex oldindex;
+    void saveContent(QModelIndex index);
     void updateContent(QModelIndex index);
 
 private slots:
