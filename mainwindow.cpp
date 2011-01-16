@@ -31,6 +31,25 @@ MainWindow::MainWindow(QWidget *parent) :
     updateContent(model->index(0,0));
 
 }
+void MainWindow::saveContent(QModelIndex index)
+{
+    for (int i=0;i<ui->tab->children().count();++i)
+    {
+        const char* name=ui->tab->children().at(i)->metaObject()->className();
+        if (name == ui->nameLineEdit->metaObject()->className())
+        {
+            //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
+            QLineEdit *edit =(QLineEdit*)ui->tab->children().at(i);
+            QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
+
+            QString text = edit->text();
+            model->setData(model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))),text);
+            //cout<<edit->objectName().toStdString()<<": "<<text.toStdString()<<endl;
+        }
+    }
+    model->submitAll();
+}
+
 void MainWindow::updateContent(QModelIndex index)
 {
     for (int i=0;i<ui->tab->children().count();++i)
@@ -38,12 +57,10 @@ void MainWindow::updateContent(QModelIndex index)
         const char* name=ui->tab->children().at(i)->metaObject()->className();
         if (name == ui->nameLineEdit->metaObject()->className())
         {
-            cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
+            //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
             QLineEdit *edit =(QLineEdit*)ui->tab->children().at(i);
             QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
 
-            //std::string text = model->index(0)
-            cout<<cont.toStdString()<<endl;
             edit->setText(cont);
         }
     }
@@ -52,12 +69,10 @@ void MainWindow::updateContent(QModelIndex index)
         const char* name=ui->tab_3->children().at(i)->metaObject()->className();
         if (name == ui->nameLineEdit->metaObject()->className())
         {
-            cout<<ui->tab_3->children().at(i)->objectName().toStdString()<<std::endl;
+            //cout<<ui->tab_3->children().at(i)->objectName().toStdString()<<std::endl;
             QLineEdit *edit =(QLineEdit*)ui->tab_3->children().at(i);
             QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
 
-            //std::string text = model->index(0)
-            cout<<cont.toStdString()<<endl;
             edit->setText(cont);
         }
     }
@@ -102,5 +117,8 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_tableView_clicked(QModelIndex index)
 {
+
+    saveContent(oldindex);
+    oldindex = index;
     updateContent(index);
 }
