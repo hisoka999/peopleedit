@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <iostream>
+#include <QFile>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -8,19 +9,37 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     QApplication::setApplicationVersion("0.1");
-    QApplication::setApplicationName("PeopleEdit");
+    QApplication::setApplicationName("peopleEdit");
+    QApplication::setOrganizationName("PeopleEdit");
 
+    QSettings ini(QSettings::IniFormat, QSettings::UserScope,
+    QCoreApplication::organizationName(),
+    QCoreApplication::applicationName());
+    QString dir = QFileInfo(ini.fileName()).absolutePath();
+
+    QDir path = QDir(dir);
+    bool newdb= false;
+    QMessageBox::critical(0,"PATH",dir,QMessageBox::Ok);
+    QFile dbfile(path.absolutePath()+path.separator()+"data.db");
+    if (!path.exists(path.absolutePath()))
+    {
+        path.mkpath(path.absolutePath());
+        dbfile.open(QIODevice::WriteOnly);
+       dbfile.flush();
+       dbfile.close();
+       newdb = true;
+    }
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/stefan/.config/peopleedit/data.db");
+    db.setDatabaseName(dbfile.fileName());
     if (!db.open()) {
         QMessageBox::critical(0, qApp->tr("Cannot open database"),
-            qApp->tr("Unable to establish a database connection.\n"
-                     "This example needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it.\n\n"
+            qApp->tr("Unable to establish a database connection.\n\n"
                      "Click Cancel to exit."), QMessageBox::Cancel);
-        QApplication::exit();
+
+
+        this->close();
     }
+    if(newdb)SqlModel::createTable();
     ui->setupUi(this);
     model = new SqlModel(db);
     ui->tableView->setModel(model);
@@ -128,4 +147,10 @@ void MainWindow::on_tableView_clicked(QModelIndex index)
 void MainWindow::on_actionAbout_qt_triggered()
 {
     QApplication::aboutQt();
+}
+
+void MainWindow::on_actionNew_triggered()
+{
+    model->insertRow(0);
+
 }
