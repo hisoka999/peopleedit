@@ -80,9 +80,11 @@ void MainWindow::updateContent(QModelIndex index)
     QGraphicsScene *scene = new QGraphicsScene();
     cerr<<path.toStdString()<<endl;
     QPixmap image = QPixmap(path);
+    if (!image.isNull())
+    {
     image.scaled(100,100);
     scene->addPixmap(image);
-
+    }
     ui->graphicsView->setScene(scene);
     //ui->graphicsView->scale(100,100);
 }
@@ -121,4 +123,9 @@ void MainWindow::on_tableView_clicked(QModelIndex index)
     saveContent(oldindex);
     oldindex = index;
     updateContent(index);
+}
+
+void MainWindow::on_actionAbout_qt_triggered()
+{
+    QApplication::aboutQt();
 }

@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>378</width>
-    <height>578</height>
+    <width>401</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Peopleedit</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -84,6 +84,12 @@
             <height>110</height>
            </size>
           </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
          </widget>
         </item>
         <item row="3" column="3">
@@ -126,49 +132,49 @@
         <item row="2" column="2">
          <widget class="QLabel" name="label_7">
           <property name="text">
-           <string>TextLabel</string>
+           <string>nickname:</string>
           </property>
          </widget>
         </item>
         <item row="3" column="2">
          <widget class="QLabel" name="label_8">
           <property name="text">
-           <string>TextLabel</string>
+           <string>contactname:</string>
           </property>
          </widget>
         </item>
         <item row="4" column="2">
          <widget class="QLabel" name="label_9">
           <property name="text">
-           <string>TextLabel</string>
+           <string>postal:</string>
           </property>
          </widget>
         </item>
         <item row="5" column="2">
          <widget class="QLabel" name="label_10">
           <property name="text">
-           <string>TextLabel</string>
+           <string>city:</string>
           </property>
          </widget>
         </item>
         <item row="6" column="2">
          <widget class="QLabel" name="label_11">
           <property name="text">
-           <string>TextLabel</string>
+           <string>street:</string>
           </property>
          </widget>
         </item>
         <item row="7" column="2">
          <widget class="QLabel" name="label_12">
           <property name="text">
-           <string>TextLabel</string>
+           <string>house number:</string>
           </property>
          </widget>
         </item>
         <item row="8" column="2">
          <widget class="QLabel" name="label_13">
           <property name="text">
-           <string>TextLabel</string>
+           <string>country:</string>
           </property>
          </widget>
         </item>
@@ -332,7 +338,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>378</width>
+     <width>401</width>
      <height>25</height>
     </rect>
    </property>
@@ -354,6 +360,7 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
+    <addaction name="actionAbout_qt"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -389,6 +396,11 @@
   <action name="actionDelete">
    <property name="text">
     <string>delete</string>
+   </property>
+  </action>
+  <action name="actionAbout_qt">
+   <property name="text">
+    <string>about qt</string>
    </property>
   </action>
  </widget>
