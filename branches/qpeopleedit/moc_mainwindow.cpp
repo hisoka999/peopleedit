@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Sun Jan 16 22:47:58 2011
+** Created: Mon Jan 17 17:16:57 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,15 +31,17 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      18,   12,   11,   11, 0x08,
-      52,   11,   11,   11, 0x08,
-      79,   11,   11,   11, 0x08,
+      12,   11,   11,   11, 0x08,
+      48,   42,   11,   11, 0x08,
+      82,   11,   11,   11, 0x08,
+     109,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
-    "MainWindow\0\0index\0on_tableView_clicked(QModelIndex)\0"
+    "MainWindow\0\0on_actionAbout_qt_triggered()\0"
+    "index\0on_tableView_clicked(QModelIndex)\0"
     "on_actionAbout_triggered()\0"
     "on_actionExit_triggered()\0"
 };
@@ -73,12 +75,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: on_tableView_clicked((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
-        case 1: on_actionAbout_triggered(); break;
-        case 2: on_actionExit_triggered(); break;
+        case 0: on_actionAbout_qt_triggered(); break;
+        case 1: on_tableView_clicked((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
+        case 2: on_actionAbout_triggered(); break;
+        case 3: on_actionExit_triggered(); break;
         default: ;
         }
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

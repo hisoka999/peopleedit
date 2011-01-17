@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun Jan 16 21:43:03 2011
+** Created: Mon Jan 17 17:16:33 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -39,6 +39,7 @@ public:
     QAction *actionAbout;
     QAction *actionExit;
     QAction *actionDelete;
+    QAction *actionAbout_qt;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QTableView *tableView;
@@ -94,7 +95,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(378, 578);
+        MainWindow->resize(401, 572);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/base/peopleedit.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -106,6 +107,8 @@ public:
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         actionDelete = new QAction(MainWindow);
         actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
+        actionAbout_qt = new QAction(MainWindow);
+        actionAbout_qt->setObjectName(QString::fromUtf8("actionAbout_qt"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
@@ -165,6 +168,8 @@ public:
         graphicsView->setSizePolicy(sizePolicy1);
         graphicsView->setMinimumSize(QSize(100, 100));
         graphicsView->setMaximumSize(QSize(110, 110));
+        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
         gridLayout_3->addWidget(graphicsView, 0, 1, 3, 1);
 
@@ -365,7 +370,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 378, 25));
+        menuBar->setGeometry(QRect(0, 0, 401, 25));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuEdit = new QMenu(menuBar);
@@ -387,6 +392,7 @@ public:
         menuFile->addAction(actionExit);
         menuEdit->addAction(actionDelete);
         menuHelp->addAction(actionAbout);
+        menuHelp->addAction(actionAbout_qt);
         mainToolBar->addAction(actionNew);
         mainToolBar->addAction(actionDelete);
         mainToolBar->addAction(actionAbout);
@@ -401,21 +407,22 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Peopleedit", 0, QApplication::UnicodeUTF8));
         actionNew->setText(QApplication::translate("MainWindow", "new", 0, QApplication::UnicodeUTF8));
         actionAbout->setText(QApplication::translate("MainWindow", "about", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
         actionDelete->setText(QApplication::translate("MainWindow", "delete", 0, QApplication::UnicodeUTF8));
+        actionAbout_qt->setText(QApplication::translate("MainWindow", "about qt", 0, QApplication::UnicodeUTF8));
         nameLabel->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
         forenameLabel->setText(QApplication::translate("MainWindow", "forename", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "...", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_9->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_10->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_13->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("MainWindow", "nickname:", 0, QApplication::UnicodeUTF8));
+        label_8->setText(QApplication::translate("MainWindow", "contactname:", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("MainWindow", "postal:", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("MainWindow", "city:", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("MainWindow", "street:", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("MainWindow", "house number:", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("MainWindow", "country:", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "private", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "office", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "email:", 0, QApplication::UnicodeUTF8));

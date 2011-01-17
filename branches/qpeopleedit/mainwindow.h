@@ -29,6 +29,7 @@ private:
     void updateContent(QModelIndex index);
 
 private slots:
+    void on_actionAbout_qt_triggered();
     void on_tableView_clicked(QModelIndex index);
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
