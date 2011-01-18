@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QDir path = QDir(dir);
     bool newdb= false;
-    QMessageBox::critical(0,"PATH",dir,QMessageBox::Ok);
     QFile dbfile(path.absolutePath()+path.separator()+"data.db");
     if (!path.exists(path.absolutePath()))
     {
@@ -29,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
        dbfile.close();
        newdb = true;
     }
-    db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbfile.fileName());
     if (!db.open()) {
         QMessageBox::critical(0, qApp->tr("Cannot open database"),
@@ -59,6 +58,20 @@ void MainWindow::saveContent(QModelIndex index)
         {
             //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
             QLineEdit *edit =(QLineEdit*)ui->tab->children().at(i);
+            QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
+
+            QString text = edit->text();
+            model->setData(model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))),text);
+            //cout<<edit->objectName().toStdString()<<": "<<text.toStdString()<<endl;
+        }
+    }
+    for (int i=0;i<ui->tab_3->children().count();++i)
+    {
+        const char* name=ui->tab_3->children().at(i)->metaObject()->className();
+        if (name == ui->nameLineEdit->metaObject()->className())
+        {
+            //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
+            QLineEdit *edit =(QLineEdit*)ui->tab_3->children().at(i);
             QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
 
             QString text = edit->text();
@@ -110,7 +123,9 @@ void MainWindow::updateContent(QModelIndex index)
 
 MainWindow::~MainWindow()
 {
-    db.close();
+    model->submitAll();
+    delete model;
+    QSqlDatabase::removeDatabase("QSQLITE");
     delete ui;
 }
 
@@ -153,4 +168,9 @@ void MainWindow::on_actionNew_triggered()
 {
     model->insertRow(0);
 
+}
+
+void MainWindow::on_actionDelete_triggered()
+{
+    model->removeRow(oldindex.row());
 }
