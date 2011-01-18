@@ -23,12 +23,12 @@ protected:
 private:
     Ui::MainWindow *ui;
     SqlModel *model;
-    QSqlDatabase db;
     QModelIndex oldindex;
     void saveContent(QModelIndex index);
     void updateContent(QModelIndex index);
 
 private slots:
+    void on_actionDelete_triggered();
     void on_actionNew_triggered();
     void on_actionAbout_qt_triggered();
     void on_tableView_clicked(QModelIndex index);
