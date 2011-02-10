@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue Jan 18 01:55:14 2011
+** Created: Sat Feb 5 22:29:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -40,6 +40,7 @@ public:
     QAction *actionExit;
     QAction *actionDelete;
     QAction *actionAbout_qt;
+    QAction *actionGoogle_Contacts;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QTableView *tableView;
@@ -88,6 +89,7 @@ public:
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuHelp;
+    QMenu *menuSync;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -96,7 +98,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
-        MainWindow->resize(401, 572);
+        MainWindow->resize(425, 572);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/base/peopleedit.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -110,6 +112,8 @@ public:
         actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
         actionAbout_qt = new QAction(MainWindow);
         actionAbout_qt->setObjectName(QString::fromUtf8("actionAbout_qt"));
+        actionGoogle_Contacts = new QAction(MainWindow);
+        actionGoogle_Contacts->setObjectName(QString::fromUtf8("actionGoogle_Contacts"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
@@ -371,13 +375,15 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 401, 25));
+        menuBar->setGeometry(QRect(0, 0, 425, 25));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuEdit = new QMenu(menuBar);
         menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         menuHelp = new QMenu(menuBar);
         menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+        menuSync = new QMenu(menuBar);
+        menuSync->setObjectName(QString::fromUtf8("menuSync"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -390,11 +396,13 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuEdit->menuAction());
         menuBar->addAction(menuHelp->menuAction());
+        menuBar->addAction(menuSync->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionExit);
         menuEdit->addAction(actionDelete);
         menuHelp->addAction(actionAbout);
         menuHelp->addAction(actionAbout_qt);
+        menuSync->addAction(actionGoogle_Contacts);
         mainToolBar->addAction(actionNew);
         mainToolBar->addAction(actionDelete);
         mainToolBar->addAction(actionAbout);
@@ -415,6 +423,7 @@ public:
         actionExit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
         actionDelete->setText(QApplication::translate("MainWindow", "delete", 0, QApplication::UnicodeUTF8));
         actionAbout_qt->setText(QApplication::translate("MainWindow", "about qt", 0, QApplication::UnicodeUTF8));
+        actionGoogle_Contacts->setText(QApplication::translate("MainWindow", "Google Contacts", 0, QApplication::UnicodeUTF8));
         nameLabel->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
         forenameLabel->setText(QApplication::translate("MainWindow", "forename", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "...", 0, QApplication::UnicodeUTF8));
@@ -438,6 +447,7 @@ public:
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));
+        menuSync->setTitle(QApplication::translate("MainWindow", "Sync", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

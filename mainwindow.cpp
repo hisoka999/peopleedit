@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <QFile>
+#include <QFileDialog>
+#include <googlecontactdialog.h>
+//#include <QNetworkRequest>
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -49,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     updateContent(model->index(0,0));
 
 }
+
 void MainWindow::saveContent(QModelIndex index)
 {
     for (int i=0;i<ui->tab->children().count();++i)
@@ -173,4 +178,28 @@ void MainWindow::on_actionNew_triggered()
 void MainWindow::on_actionDelete_triggered()
 {
     model->removeRow(oldindex.row());
+}
+
+void MainWindow::on_actionGoogle_Contacts_triggered()
+{
+    GoogleContactDialog *dialog = new GoogleContactDialog();
+    dialog->show();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString path = QFileDialog::getOpenFileName(this,
+                                            tr("Open Image"), QDir::homePath(), tr("Image Files (*.png *.jpg *.bmp)"));
+
+    //QString path = model->index(index.row(),model->fieldIndex("image")).data().toString();
+    QGraphicsScene *scene = new QGraphicsScene();
+    cerr<<path.toStdString()<<endl;
+    QPixmap image = QPixmap(path);
+    if (!image.isNull())
+    {
+    image.scaled(100,100);
+    scene->addPixmap(image);
+    }
+    ui->graphicsView->setScene(scene);
+    model->setData(model->index(oldindex.row(),model->fieldIndex("image")),path);
 }
