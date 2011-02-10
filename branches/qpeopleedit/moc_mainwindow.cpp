@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Tue Jan 18 02:02:24 2011
+** Created: Thu Feb 10 01:28:54 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,17 +32,21 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
-      40,   11,   11,   11, 0x08,
-      65,   11,   11,   11, 0x08,
-     101,   95,   11,   11, 0x08,
-     135,   11,   11,   11, 0x08,
-     162,   11,   11,   11, 0x08,
+      36,   11,   11,   11, 0x08,
+      73,   11,   11,   11, 0x08,
+     101,   11,   11,   11, 0x08,
+     126,   11,   11,   11, 0x08,
+     162,  156,   11,   11, 0x08,
+     196,   11,   11,   11, 0x08,
+     223,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
-    "MainWindow\0\0on_actionDelete_triggered()\0"
+    "MainWindow\0\0on_pushButton_clicked()\0"
+    "on_actionGoogle_Contacts_triggered()\0"
+    "on_actionDelete_triggered()\0"
     "on_actionNew_triggered()\0"
     "on_actionAbout_qt_triggered()\0index\0"
     "on_tableView_clicked(QModelIndex)\0"
@@ -79,15 +83,17 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: on_actionDelete_triggered(); break;
-        case 1: on_actionNew_triggered(); break;
-        case 2: on_actionAbout_qt_triggered(); break;
-        case 3: on_tableView_clicked((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
-        case 4: on_actionAbout_triggered(); break;
-        case 5: on_actionExit_triggered(); break;
+        case 0: on_pushButton_clicked(); break;
+        case 1: on_actionGoogle_Contacts_triggered(); break;
+        case 2: on_actionDelete_triggered(); break;
+        case 3: on_actionNew_triggered(); break;
+        case 4: on_actionAbout_qt_triggered(); break;
+        case 5: on_tableView_clicked((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
+        case 6: on_actionAbout_triggered(); break;
+        case 7: on_actionExit_triggered(); break;
         default: ;
         }
-        _id -= 6;
+        _id -= 8;
     }
     return _id;
 }

@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui \
-         sql
+         sql\
+         network
 
 TARGET = QPeopleEdit
 TEMPLATE = app
@@ -13,12 +14,25 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    sqlmodel.cpp
+    sqlmodel.cpp \
+    gauth.cpp \
+    gcontacts.cpp \
+    googlecontactdialog.cpp \
+    googleloginform.cpp \
+    googleupdateform.cpp
 
 HEADERS  += mainwindow.h \
-    sqlmodel.h
+    sqlmodel.h \
+    gauth.h \
+    gcontacts.h \
+    googlecontactdialog.h \
+    googleloginform.h \
+    googleupdateform.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    googlecontactdialog.ui \
+    googleloginform.ui \
+    googleupdateform.ui
 
 TRANSLATIONS = de.ts
 
