@@ -6,8 +6,8 @@
 #include <QtSql/QSqlDatabase>
 #include <QtNetwork/QtNetwork>
 #include <QUrl>
-#include <gauth.h>
-#include <gcontacts.h>
+#include "pluginloader.h"
+
 
 namespace Ui {
     class MainWindow;
@@ -28,10 +28,9 @@ private:
     Ui::MainWindow *ui;
     SqlModel *model;
     QHttp *http;
-    GAuth *auth;
-    GContacts *contacts;
     QNetworkAccessManager manager;
     QModelIndex oldindex;
+    PluginLoader *loader;
     void saveContent(QModelIndex index);
     void updateContent(QModelIndex index);
 
@@ -44,6 +43,7 @@ private slots:
     void on_tableView_clicked(QModelIndex index);
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
+    void syncAction(QAction* action);
 };
 
 #endif // MAINWINDOW_H

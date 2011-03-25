@@ -3,8 +3,8 @@
 #include <iostream>
 #include <QFile>
 #include <QFileDialog>
-#include <googlecontactdialog.h>
-//#include <QNetworkRequest>
+#include <QLibrary>
+
 
 using namespace std;
 
@@ -32,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
        dbfile.close();
        newdb = true;
     }
+
+
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(dbfile.fileName());
     if (!db.open()) {
@@ -44,6 +46,15 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     if(newdb)SqlModel::createTable();
     ui->setupUi(this);
+    connect(ui->menuSync,SIGNAL(triggered(QAction*)),this,SLOT(syncAction(QAction*)));
+
+    QMenu *m = this->menuBar()->findChild<QMenu*>(QString("menuSync"));
+    for(int i=0;i<menuBar()->children().size();++i)
+        cout<<menuBar()->children().at(i)->objectName().toStdString()<<endl;
+    if(m!=NULL)
+    {
+        cout<<"sync menu was found"<<endl;
+    }
     model = new SqlModel(db);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QSqlRelationalDelegate(ui->tableView));
@@ -52,6 +63,30 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->tableView->hideColumn(i);
     updateContent(model->index(0,0));
 
+    //cout<<QApplication::libraryPaths()
+    foreach (QString path, QApplication::libraryPaths())
+         cout<<path.toStdString()<<endl;
+    QLibrary mylib("/home/stefan/projects/GoogleSync/libGoogleSync.so");
+    //QLibrary mylib("/home/stefan/projects/Testplugin/libTestplugin.so");
+    typedef int(*ExecFunction)();
+    //mylib.load();
+    ExecFunction exec = (ExecFunction) mylib.resolve("ddd");
+    //mylib.resolve("GoogleContactDialog");
+    if(exec)
+    {
+        //exec();
+        cout<<"exec function executed!"<<endl;
+    }
+
+    //if(!mylib.isLoaded())
+    loader = new PluginLoader(this,"/home/stefan/projects/qpeopleedit/plugins");
+    cout<<mylib.errorString().toStdString()<<endl;
+}
+void MainWindow::syncAction(QAction* action)
+{
+    cout<<"action executed"<<endl;
+    cout<<action->objectName().toStdString()<<endl;
+    loader->exec(action->objectName());
 }
 
 void MainWindow::saveContent(QModelIndex index)
@@ -182,8 +217,8 @@ void MainWindow::on_actionDelete_triggered()
 
 void MainWindow::on_actionGoogle_Contacts_triggered()
 {
-    GoogleContactDialog *dialog = new GoogleContactDialog();
-    dialog->show();
+    //GoogleContactDialog *dialog = new GoogleContactDialog();
+    //dialog->show();
 }
 
 void MainWindow::on_pushButton_clicked()

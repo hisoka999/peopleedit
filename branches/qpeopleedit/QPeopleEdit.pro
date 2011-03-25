@@ -15,24 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     sqlmodel.cpp \
-    gauth.cpp \
-    gcontacts.cpp \
-    googlecontactdialog.cpp \
-    googleloginform.cpp \
-    googleupdateform.cpp
+    pluginloader.cpp
 
 HEADERS  += mainwindow.h \
     sqlmodel.h \
-    gauth.h \
-    gcontacts.h \
-    googlecontactdialog.h \
-    googleloginform.h \
-    googleupdateform.h
+    pluginloader.h
 
-FORMS    += mainwindow.ui \
-    googlecontactdialog.ui \
-    googleloginform.ui \
-    googleupdateform.ui
+FORMS    += mainwindow.ui
 
 TRANSLATIONS = de.ts
 
