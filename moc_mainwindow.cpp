@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Thu Feb 10 01:28:54 2011
+** Created: Fri Mar 25 23:21:06 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -39,6 +39,7 @@ static const uint qt_meta_data_MainWindow[] = {
      162,  156,   11,   11, 0x08,
      196,   11,   11,   11, 0x08,
      223,   11,   11,   11, 0x08,
+     256,  249,   11,   11, 0x08,
 
        0        // eod
 };
@@ -51,7 +52,8 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_actionAbout_qt_triggered()\0index\0"
     "on_tableView_clicked(QModelIndex)\0"
     "on_actionAbout_triggered()\0"
-    "on_actionExit_triggered()\0"
+    "on_actionExit_triggered()\0action\0"
+    "syncAction(QAction*)\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -91,9 +93,10 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 5: on_tableView_clicked((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         case 6: on_actionAbout_triggered(); break;
         case 7: on_actionExit_triggered(); break;
+        case 8: syncAction((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

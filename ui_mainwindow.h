@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sat Feb 5 22:29:54 2011
+** Created: Fri Mar 25 23:13:09 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -40,7 +40,6 @@ public:
     QAction *actionExit;
     QAction *actionDelete;
     QAction *actionAbout_qt;
-    QAction *actionGoogle_Contacts;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QTableView *tableView;
@@ -112,8 +111,6 @@ public:
         actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
         actionAbout_qt = new QAction(MainWindow);
         actionAbout_qt->setObjectName(QString::fromUtf8("actionAbout_qt"));
-        actionGoogle_Contacts = new QAction(MainWindow);
-        actionGoogle_Contacts->setObjectName(QString::fromUtf8("actionGoogle_Contacts"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
@@ -375,7 +372,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 425, 25));
+        menuBar->setGeometry(QRect(0, 0, 425, 29));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuEdit = new QMenu(menuBar);
@@ -395,14 +392,13 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuEdit->menuAction());
-        menuBar->addAction(menuHelp->menuAction());
         menuBar->addAction(menuSync->menuAction());
+        menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionExit);
         menuEdit->addAction(actionDelete);
         menuHelp->addAction(actionAbout);
         menuHelp->addAction(actionAbout_qt);
-        menuSync->addAction(actionGoogle_Contacts);
         mainToolBar->addAction(actionNew);
         mainToolBar->addAction(actionDelete);
         mainToolBar->addAction(actionAbout);
@@ -423,7 +419,6 @@ public:
         actionExit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
         actionDelete->setText(QApplication::translate("MainWindow", "delete", 0, QApplication::UnicodeUTF8));
         actionAbout_qt->setText(QApplication::translate("MainWindow", "about qt", 0, QApplication::UnicodeUTF8));
-        actionGoogle_Contacts->setText(QApplication::translate("MainWindow", "Google Contacts", 0, QApplication::UnicodeUTF8));
         nameLabel->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
         forenameLabel->setText(QApplication::translate("MainWindow", "forename", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "...", 0, QApplication::UnicodeUTF8));

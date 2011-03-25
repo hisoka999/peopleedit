@@ -342,7 +342,7 @@
      <x>0</x>
      <y>0</y>
      <width>425</width>
-     <height>25</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -369,12 +369,11 @@
     <property name="title">
      <string>Sync</string>
     </property>
-    <addaction name="actionGoogle_Contacts"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
-   <addaction name="menuHelp"/>
    <addaction name="menuSync"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="movable">
@@ -414,11 +413,6 @@
   <action name="actionAbout_qt">
    <property name="text">
     <string>about qt</string>
-   </property>
-  </action>
-  <action name="actionGoogle_Contacts">
-   <property name="text">
-    <string>Google Contacts</string>
    </property>
   </action>
  </widget>

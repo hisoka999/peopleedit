@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(resources);
     QTranslator translator;
     QString locale = QLocale::system().name();;
+    a.addLibraryPath("plugins");
     locale.resize(2);
     std::cout<<locale.toStdString()<<std::endl;
     translator.load("de.qm");
