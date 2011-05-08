@@ -197,6 +197,7 @@ void MainWindow::on_tableView_clicked(QModelIndex index)
     saveContent(oldindex);
     oldindex = index;
     updateContent(index);
+    ui->tableView->setCurrentIndex(index);
 }
 
 void MainWindow::on_actionAbout_qt_triggered()
