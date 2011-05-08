@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>425</width>
-    <height>572</height>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,17 +22,14 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" rowspan="2">
-     <widget class="QTableView" name="tableView"/>
-    </item>
-    <item row="2" column="0">
+    <item row="5" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -334,6 +331,28 @@
       </widget>
      </widget>
     </item>
+    <item row="3" column="0" rowspan="2">
+     <widget class="QTableView" name="tableView">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropOverwriteMode">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -391,11 +410,19 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/base/icons/filenew.png</normaloff>:/base/icons/filenew.png</iconset>
+   </property>
    <property name="text">
     <string>new</string>
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/base/icons/gtk-about.png</normaloff>:/base/icons/gtk-about.png</iconset>
+   </property>
    <property name="text">
     <string>about</string>
    </property>
@@ -406,6 +433,10 @@
    </property>
   </action>
   <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/base/icons/trashcan_full.png</normaloff>:/base/icons/trashcan_full.png</iconset>
+   </property>
    <property name="text">
     <string>delete</string>
    </property>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Mar 25 23:13:09 2011
+** Created: Sun May 8 13:39:49 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -42,7 +42,6 @@ public:
     QAction *actionAbout_qt;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
-    QTableView *tableView;
     QTabWidget *tabWidget;
     QWidget *tab;
     QGridLayout *gridLayout_3;
@@ -84,6 +83,7 @@ public:
     QLabel *label_5;
     QLabel *label_6;
     QWidget *widget;
+    QTableView *tableView;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -97,18 +97,27 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
-        MainWindow->resize(425, 572);
+        MainWindow->resize(425, 606);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/base/peopleedit.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         actionNew = new QAction(MainWindow);
         actionNew->setObjectName(QString::fromUtf8("actionNew"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/base/icons/filenew.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNew->setIcon(icon1);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/base/icons/gtk-about.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAbout->setIcon(icon2);
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         actionDelete = new QAction(MainWindow);
         actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/base/icons/trashcan_full.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDelete->setIcon(icon3);
         actionAbout_qt = new QAction(MainWindow);
         actionAbout_qt->setObjectName(QString::fromUtf8("actionAbout_qt"));
         centralWidget = new QWidget(MainWindow);
@@ -117,16 +126,11 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        tableView = new QTableView(centralWidget);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-
-        gridLayout_2->addWidget(tableView, 0, 0, 2, 1);
-
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(tab->sizePolicy().hasHeightForWidth());
@@ -367,7 +371,18 @@ public:
 
         tabWidget->addTab(tab_3, QString());
 
-        gridLayout_2->addWidget(tabWidget, 2, 0, 1, 1);
+        gridLayout_2->addWidget(tabWidget, 5, 0, 1, 1);
+
+        tableView = new QTableView(centralWidget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setAutoFillBackground(false);
+        tableView->setDragDropOverwriteMode(true);
+        tableView->setSelectionMode(QAbstractItemView::ExtendedSelection);
+        tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        tableView->setSortingEnabled(true);
+        tableView->verticalHeader()->setVisible(false);
+
+        gridLayout_2->addWidget(tableView, 3, 0, 2, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
