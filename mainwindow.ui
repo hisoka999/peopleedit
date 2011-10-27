@@ -361,14 +361,28 @@
      <x>0</x>
      <y>0</y>
      <width>425</width>
-     <height>29</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>import</string>
+     </property>
+     <addaction name="actionVCard"/>
+    </widget>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>export</string>
+     </property>
+     <addaction name="actionVCard_2"/>
+    </widget>
     <addaction name="actionNew"/>
+    <addaction name="menuImport"/>
+    <addaction name="menuExport"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -444,6 +458,16 @@
   <action name="actionAbout_qt">
    <property name="text">
     <string>about qt</string>
+   </property>
+  </action>
+  <action name="actionVCard">
+   <property name="text">
+    <string>vCard</string>
+   </property>
+  </action>
+  <action name="actionVCard_2">
+   <property name="text">
+    <string>vCard</string>
    </property>
   </action>
  </widget>

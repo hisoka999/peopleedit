@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QLibrary>
+#include "vcard.h"
 
 
 using namespace std;
@@ -63,24 +64,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->tableView->hideColumn(i);
     updateContent(model->index(0,0));
 
-    //cout<<QApplication::libraryPaths()
-    foreach (QString path, QApplication::libraryPaths())
-         cout<<path.toStdString()<<endl;
-    QLibrary mylib("/home/stefan/projects/GoogleSync/libGoogleSync.so");
-    //QLibrary mylib("/home/stefan/projects/Testplugin/libTestplugin.so");
-    typedef int(*ExecFunction)();
-    //mylib.load();
-    ExecFunction exec = (ExecFunction) mylib.resolve("ddd");
-    //mylib.resolve("GoogleContactDialog");
-    if(exec)
-    {
-        //exec();
-        cout<<"exec function executed!"<<endl;
-    }
-
-    //if(!mylib.isLoaded())
     loader = new PluginLoader(this,"/home/stefan/projects/qpeopleedit/plugins");
-    cout<<mylib.errorString().toStdString()<<endl;
+
 }
 void MainWindow::syncAction(QAction* action)
 {
@@ -188,7 +173,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    QMessageBox::about(this,QObject::tr("About PeopleEdit"),QObject::tr("this is free software."));
+    QMessageBox::about(this,QObject::tr("About PeopleEdit"),QObject::tr(QString("this is free software under the <br>terms of the GPL.<br><br><b>Version:</b> "+QApplication::applicationVersion()+"<br><b>Author:</b> Stefan L&uuml;dtke<br><a href=\"http://code.google.com/p/peopleedit/\">Website</a>").toUtf8()));
 }
 
 void MainWindow::on_tableView_clicked(QModelIndex index)
@@ -238,4 +223,17 @@ void MainWindow::on_pushButton_clicked()
     }
     ui->graphicsView->setScene(scene);
     model->setData(model->index(oldindex.row(),model->fieldIndex("image")),path);
+}
+
+void MainWindow::on_actionVCard_triggered()
+{
+    QString path = QFileDialog::getOpenFileName(this,tr("Open vCard"),QDir::homePath(),tr("vCard Files (*.vcf)"));
+    std::cout<<path.toStdString()<<std::endl;
+    QList<vCard> vcards = vCard::readFromFile(path);
+
+    // ...and then we can use it.
+    if (!vcards.isEmpty())
+    {
+
+    }
 }

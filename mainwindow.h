@@ -44,6 +44,7 @@ private slots:
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
     void syncAction(QAction* action);
+    void on_actionVCard_triggered();
 };
 
 #endif // MAINWINDOW_H

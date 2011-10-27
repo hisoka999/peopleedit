@@ -11,15 +11,16 @@ QT       += core gui \
 TARGET = QPeopleEdit
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     sqlmodel.cpp \
-    pluginloader.cpp
+    pluginloader.cpp \
+    vcard.cpp
 
 HEADERS  += mainwindow.h \
     sqlmodel.h \
-    pluginloader.h
+    pluginloader.h \
+    vcard.h
 
 FORMS    += mainwindow.ui
 
