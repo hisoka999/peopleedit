@@ -9,14 +9,17 @@ vCard::vCard(QStringList data)
     {
         QStringList tmp = line.split(':');
         QStringList prop = tmp.at(0).split(';');
-        props[prop.at(0)] = tmp.at(1);
+        if (prop.at(0) == "N")
+            props[prop.at(0)] = vCardName(prop.at(0),tmp.at(1));
+        else
+            props[prop.at(0)] = vCardProperty(prop.at(0),tmp.at(1));
         std::cout<<prop.at(0).toStdString()<<"::"<<tmp.at(1).toStdString()<<std::endl;
 
     }
-    foreach(QString obj,props)
+    foreach(vCardProperty obj,props)
     {
         //QString tmp = (QString)obj;
-        std::cout<<obj.toStdString()<<std::endl;
+        std::cout<<obj.getValue().toStdString()<<std::endl;
     }
 }
 

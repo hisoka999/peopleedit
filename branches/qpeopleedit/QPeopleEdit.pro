@@ -6,7 +6,8 @@
 
 QT       += core gui \
          sql\
-         network
+         network\
+         xml
 
 TARGET = QPeopleEdit
 TEMPLATE = app
@@ -15,12 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     sqlmodel.cpp \
     pluginloader.cpp \
-    vcard.cpp
+    vcard.cpp \
+    freedesktopmime.cpp
 
 HEADERS  += mainwindow.h \
     sqlmodel.h \
     pluginloader.h \
-    vcard.h
+    vcard.h \
+    freedesktopmime.h
 
 FORMS    += mainwindow.ui
 
