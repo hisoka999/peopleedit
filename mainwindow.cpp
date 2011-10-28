@@ -1,13 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <iostream>
+#include <QtGui>
 #include <QFile>
 #include <QFileDialog>
 #include <QLibrary>
 #include "vcard.h"
+#include "freedesktopmime.h"
+#include <QDebug>
 
-
-using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QCoreApplication::organizationName(),
     QCoreApplication::applicationName());
     QString dir = QFileInfo(ini.fileName()).absolutePath();
-
+    setAcceptDrops(true);
     QDir path = QDir(dir);
     bool newdb= false;
     QFile dbfile(path.absolutePath()+path.separator()+"data.db");
@@ -51,10 +51,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QMenu *m = this->menuBar()->findChild<QMenu*>(QString("menuSync"));
     for(int i=0;i<menuBar()->children().size();++i)
-        cout<<menuBar()->children().at(i)->objectName().toStdString()<<endl;
+        qDebug()<<menuBar()->children().at(i)->objectName();
     if(m!=NULL)
     {
-        cout<<"sync menu was found"<<endl;
+        qDebug()<<QString("sync menu was found");
     }
     model = new SqlModel(db);
     ui->tableView->setModel(model);
@@ -69,9 +69,50 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::syncAction(QAction* action)
 {
-    cout<<"action executed"<<endl;
-    cout<<action->objectName().toStdString()<<endl;
+    qDebug()<<QString("action executed");
+    qDebug()<<action->objectName();
     loader->exec(action->objectName());
+}
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+
+
+    event->acceptProposedAction();
+    //emit changed(event->mimeData());
+}
+
+void MainWindow::dropEvent(QDropEvent *event)
+{
+    const QMimeData *mimeData = event->mimeData();
+    qDebug()<<mimeData->urls().first().toString();
+    if (mimeData->hasImage()) {
+        QGraphicsScene *scene = new QGraphicsScene();
+
+        QPixmap image = qvariant_cast<QPixmap>(mimeData->imageData());
+        if (!image.isNull())
+        {
+            image.scaled(100,100);
+            scene->addPixmap(image);
+        }
+        ui->graphicsView->setScene(scene);
+    }else if(mimeData->hasUrls())
+    {
+        QUrl url = mimeData->urls().first();
+        QFileInfo info(url.path());
+        qDebug()<<info.absoluteFilePath();
+        QFreeDesktopMime mime;
+
+        //QFile *file = new QFile(url);
+        QString fmime = mime.fromFile(info.absoluteFilePath());
+        if(fmime.startsWith("image")){
+            model->setData(model->index(oldindex.row(),model->fieldIndex("image")),info.absoluteFilePath());
+            updateContent(oldindex);
+        }
+        else if(fmime == "text/directory"){
+            qDebug()<<QString("No Drag & Drop for vCards");
+        }
+
+    }
 }
 
 void MainWindow::saveContent(QModelIndex index)
@@ -134,13 +175,16 @@ void MainWindow::updateContent(QModelIndex index)
         }
     }
     QString path = model->index(index.row(),model->fieldIndex("image")).data().toString();
+    ui->graphicsView->setScene(NULL);
     QGraphicsScene *scene = new QGraphicsScene();
-    cerr<<path.toStdString()<<endl;
+    qDebug()<<path;
     QPixmap image = QPixmap(path);
     if (!image.isNull())
     {
-    image.scaled(100,100);
-    scene->addPixmap(image);
+        if(image.width()>100 || image.height()>100)
+            image=image.scaled(100,100,Qt::KeepAspectRatio);
+        //cerr<<image.scaledToHeight()
+        scene->addPixmap(image);
     }
     ui->graphicsView->setScene(scene);
     //ui->graphicsView->scale(100,100);
@@ -214,7 +258,7 @@ void MainWindow::on_pushButton_clicked()
 
     //QString path = model->index(index.row(),model->fieldIndex("image")).data().toString();
     QGraphicsScene *scene = new QGraphicsScene();
-    cerr<<path.toStdString()<<endl;
+    qDebug()<<path;
     QPixmap image = QPixmap(path);
     if (!image.isNull())
     {
@@ -228,7 +272,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_actionVCard_triggered()
 {
     QString path = QFileDialog::getOpenFileName(this,tr("Open vCard"),QDir::homePath(),tr("vCard Files (*.vcf)"));
-    std::cout<<path.toStdString()<<std::endl;
+    qDebug()<<path;
     QList<vCard> vcards = vCard::readFromFile(path);
 
     // ...and then we can use it.
