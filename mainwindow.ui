@@ -25,7 +25,7 @@
     <item row="5" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <property name="sizePolicy">
@@ -184,6 +184,82 @@
        <attribute name="title">
         <string>office</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="companyLabel">
+            <property name="text">
+             <string>company:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="companyLineEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="companyPhoneLabel">
+            <property name="text">
+             <string>phone:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="companyPhoneLineEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="faxLabel">
+            <property name="text">
+             <string>fax:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="faxLineEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="companyCityLabel">
+            <property name="text">
+             <string>company city:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="companyCityLineEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="companyPostalLabel">
+            <property name="text">
+             <string>company postal:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="companyPostalLineEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="companyStreetLabel">
+            <property name="text">
+             <string>company street:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="companyStreetLineEdit"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="companyHousenumberLabel">
+            <property name="text">
+             <string>company housenumber:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLineEdit" name="companyHousenumberLineEdit"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -243,7 +319,7 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1" colspan="2">
+          <item row="1" column="1">
            <widget class="QLineEdit" name="webpageLineEdit"/>
           </item>
           <item row="2" column="1" colspan="2">
@@ -325,6 +401,13 @@
           <item row="7" column="0">
            <widget class="QWidget" name="widget" native="true"/>
           </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="openPageButton">
+            <property name="text">
+             <string>open page</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
@@ -361,7 +444,7 @@
      <x>0</x>
      <y>0</y>
      <width>425</width>
-     <height>23</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -390,6 +473,7 @@
      <string>Edit</string>
     </property>
     <addaction name="actionDelete"/>
+    <addaction name="actionOptions"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -426,7 +510,7 @@
   <action name="actionNew">
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/base/icons/filenew.png</normaloff>:/base/icons/filenew.png</iconset>
+     <normaloff>:/base/icons/book_add.png</normaloff>:/base/icons/book_add.png</iconset>
    </property>
    <property name="text">
     <string>new</string>
@@ -449,7 +533,7 @@
   <action name="actionDelete">
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/base/icons/trashcan_full.png</normaloff>:/base/icons/trashcan_full.png</iconset>
+     <normaloff>:/base/icons/book_delete.png</normaloff>:/base/icons/book_delete.png</iconset>
    </property>
    <property name="text">
     <string>delete</string>
@@ -468,6 +552,11 @@
   <action name="actionVCard_2">
    <property name="text">
     <string>vCard</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>options</string>
    </property>
   </action>
  </widget>

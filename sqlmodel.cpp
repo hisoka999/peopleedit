@@ -1,5 +1,4 @@
 #include "sqlmodel.h"
-#include <iostream>
 SqlModel::SqlModel(QSqlDatabase db) : QSqlTableModel(0,db)
 {
 
@@ -16,8 +15,6 @@ SqlModel::SqlModel(QSqlDatabase db) : QSqlTableModel(0,db)
     this->setHeaderData(4, Qt::Horizontal, QObject::tr("nickname"));
 
     this->select();
-    std::cout<<"rows:"<<this->rowCount()<<std::endl;
-    std::cerr<<this->columnCount()<<std::endl;
 }
 
 void SqlModel::createTable()

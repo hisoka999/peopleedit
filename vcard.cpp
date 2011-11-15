@@ -10,17 +10,16 @@ vCard::vCard(QStringList data)
         QStringList tmp = line.split(':');
         QStringList prop = tmp.at(0).split(';');
         if (prop.at(0) == "N")
-            props[prop.at(0)] = vCardName(prop.at(0),tmp.at(1));
+            props[prop.at(0)] = new vCardName(prop.at(0),tmp.at(1));
         else
-            props[prop.at(0)] = vCardProperty(prop.at(0),tmp.at(1));
-        std::cout<<prop.at(0).toStdString()<<"::"<<tmp.at(1).toStdString()<<std::endl;
+            props[prop.at(0)] = new vCardProperty(prop.at(0),tmp.at(1));
+        //std::cout<<prop.at(0).toStdString()<<"::"<<tmp.at(1).toStdString()<<std::endl;
 
     }
-    foreach(vCardProperty obj,props)
-    {
-        //QString tmp = (QString)obj;
-        std::cout<<obj.getValue().toStdString()<<std::endl;
-    }
+}
+vCardProperty* vCard::property(QString name)
+{
+    return props[name];
 }
 
 QList<vCard> vCard::readFromFile(QString filename)

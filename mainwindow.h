@@ -29,7 +29,6 @@ protected:
 private:
     Ui::MainWindow *ui;
     SqlModel *model;
-    QHttp *http;
     QNetworkAccessManager manager;
     QModelIndex oldindex;
     PluginLoader *loader;
@@ -47,6 +46,9 @@ private slots:
     void on_actionExit_triggered();
     void syncAction(QAction* action);
     void on_actionVCard_triggered();
+    void on_actionOptions_triggered();
+    void on_openPageButton_clicked();
+    void on_writemailButton_clicked();
 };
 
 #endif // MAINWINDOW_H

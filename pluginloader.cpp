@@ -1,8 +1,7 @@
 #include "pluginloader.h"
 #include <QDir>
 #include <QMainWindow>
-#include <iostream>
-using namespace std;
+#include <QDebug>
 
 PluginLoader::PluginLoader(QWidget *parent, QString path)
 {
@@ -15,7 +14,7 @@ PluginLoader::PluginLoader(QWidget *parent, QString path)
         QStringList list = dir.entryList(filters);
         for(int i = 0;i< list.size();++i)
         {
-            cout<<(path+QDir::separator()+list.at(i)).toStdString()<<endl;
+            qDebug()<<(path+QDir::separator()+list.at(i));
             loadPlugin(path+QDir::separator()+list.at(i));
         }
     }
@@ -33,7 +32,7 @@ void PluginLoader::loadPlugin(QString path)
     {
         QString name=getName();
         libs[name]=lib;
-        cout<<"PluginName: "<<name.toStdString()<<endl;
+        qDebug()<<"PluginName: "<<name;
         //setTitleBar
         SetTitleBar setTitleBar = (SetTitleBar) lib->resolve("setTitleBar");
         if(setTitleBar)
