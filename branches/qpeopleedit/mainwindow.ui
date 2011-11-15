@@ -25,7 +25,7 @@
     <item row="5" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <property name="sizePolicy">
@@ -205,7 +205,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="companyPhoneLineEdit"/>
+           <widget class="QLineEdit" name="company_telephoneLineEdit"/>
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="faxLabel">
@@ -215,17 +215,17 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="faxLineEdit"/>
+           <widget class="QLineEdit" name="company_faxLineEdit"/>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="companyCityLabel">
+           <widget class="QLabel" name="company_cityLabel">
             <property name="text">
              <string>company city:</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="companyCityLineEdit"/>
+           <widget class="QLineEdit" name="company_cityLineEdit"/>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="companyPostalLabel">
@@ -235,7 +235,7 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="companyPostalLineEdit"/>
+           <widget class="QLineEdit" name="company_postalLineEdit"/>
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="companyStreetLabel">
@@ -245,7 +245,7 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QLineEdit" name="companyStreetLineEdit"/>
+           <widget class="QLineEdit" name="company_streetLineEdit"/>
           </item>
           <item row="6" column="0">
            <widget class="QLabel" name="companyHousenumberLabel">
@@ -255,7 +255,7 @@
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QLineEdit" name="companyHousenumberLineEdit"/>
+           <widget class="QLineEdit" name="company_housenumberLineEdit"/>
           </item>
          </layout>
         </item>
