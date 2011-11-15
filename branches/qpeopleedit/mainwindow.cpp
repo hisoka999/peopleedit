@@ -6,7 +6,9 @@
 #include <QLibrary>
 #include "vcard.h"
 #include "freedesktopmime.h"
+#include "optionsdialog.h"
 #include <QDebug>
+#include <QDesktopServices>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -195,6 +197,8 @@ MainWindow::~MainWindow()
     model->submitAll();
     delete model;
     QSqlDatabase::removeDatabase("QSQLITE");
+
+    delete loader;
     delete ui;
 }
 
@@ -278,6 +282,32 @@ void MainWindow::on_actionVCard_triggered()
     // ...and then we can use it.
     if (!vcards.isEmpty())
     {
+        foreach(vCard card,vcards)
+        {
+            qDebug()<<"Lastname: "<<((vCardName*)card.property("N"))->getLastName();
+            qDebug()<<"Firstname: "<<((vCardName*)card.property("N"))->getFirstName();
+        }
+    }
+}
 
+void MainWindow::on_actionOptions_triggered()
+{
+    OptionsDialog *dialog = new OptionsDialog(this);
+    dialog->exec();
+}
+
+void MainWindow::on_openPageButton_clicked()
+{
+    if(!ui->webpageLineEdit->text().isEmpty())
+    {
+        QDesktopServices::openUrl(QUrl(ui->webpageLineEdit->text()));
+    }
+}
+
+void MainWindow::on_writemailButton_clicked()
+{
+    if(!ui->emailLineEdit->text().isEmpty())
+    {
+        QDesktopServices::openUrl(QUrl(QString("mailto:")+ui->emailLineEdit->text()));
     }
 }

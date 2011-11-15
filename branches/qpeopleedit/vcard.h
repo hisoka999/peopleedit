@@ -30,6 +30,9 @@ public:
     }
 
     void setFirstName(QString name){firstname = name;}
+    void setLastName(QString name){lastname = name;}
+    QString getFirstName(){return firstname;}
+    QString getLastName(){ return lastname;}
 private:
     QString firstname;
     QString lastname;
@@ -40,8 +43,9 @@ class vCard
 public:
     vCard(QStringList data);
     static QList<vCard> readFromFile(QString filename);
+    vCardProperty* property(QString name);
 private:
-    QMap<QString,vCardProperty> props;
+    QMap<QString,vCardProperty*> props;
 };
 
 #endif // VCARD_H

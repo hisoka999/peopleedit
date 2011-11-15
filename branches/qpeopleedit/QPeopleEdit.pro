@@ -17,15 +17,18 @@ SOURCES += main.cpp\
     sqlmodel.cpp \
     pluginloader.cpp \
     vcard.cpp \
-    freedesktopmime.cpp
+    freedesktopmime.cpp \
+    optionsdialog.cpp
 
 HEADERS  += mainwindow.h \
     sqlmodel.h \
     pluginloader.h \
     vcard.h \
-    freedesktopmime.h
+    freedesktopmime.h \
+    optionsdialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    optionsdialog.ui
 
 TRANSLATIONS = de.ts
 

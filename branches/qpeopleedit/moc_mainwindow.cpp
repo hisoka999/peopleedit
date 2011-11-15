@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Fri Oct 28 17:50:56 2011
+** Created: Tue Nov 15 01:35:00 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -41,6 +41,9 @@ static const uint qt_meta_data_MainWindow[] = {
      223,   11,   11,   11, 0x08,
      256,  249,   11,   11, 0x08,
      277,   11,   11,   11, 0x08,
+     304,   11,   11,   11, 0x08,
+     333,   11,   11,   11, 0x08,
+     361,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -55,6 +58,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_actionAbout_triggered()\0"
     "on_actionExit_triggered()\0action\0"
     "syncAction(QAction*)\0on_actionVCard_triggered()\0"
+    "on_actionOptions_triggered()\0"
+    "on_openPageButton_clicked()\0"
+    "on_writemailButton_clicked()\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -96,9 +102,12 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 7: on_actionExit_triggered(); break;
         case 8: syncAction((*reinterpret_cast< QAction*(*)>(_a[1]))); break;
         case 9: on_actionVCard_triggered(); break;
+        case 10: on_actionOptions_triggered(); break;
+        case 11: on_openPageButton_clicked(); break;
+        case 12: on_writemailButton_clicked(); break;
         default: ;
         }
-        _id -= 10;
+        _id -= 13;
     }
     return _id;
 }

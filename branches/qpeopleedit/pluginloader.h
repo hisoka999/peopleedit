@@ -5,6 +5,20 @@
 #include <QLibrary>
 #include <QMap>
 
+class Library{
+public:
+    Library(QLibrary* library,QString name,QString version)
+    {
+        this->library = library;
+        this->name    = name;
+        this->version = version;
+    }
+private:
+    QLibrary *library;
+    QString name;
+    QString version;
+};
+
 class PluginLoader
 {
 public:

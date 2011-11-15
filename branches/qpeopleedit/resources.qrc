@@ -8,5 +8,18 @@
         <file>icons/gtk-about.png</file>
         <file>icons/trashcan_full.png</file>
         <file alias="freedesktopmime.xml">freedesktop.org.xml</file>
+        <file>icons/plugin.png</file>
+        <file>icons/plugin_add.png</file>
+        <file>icons/plugin_delete.png</file>
+        <file>icons/plugin_disabled.png</file>
+        <file>icons/plugin_edit.png</file>
+        <file>icons/plugin_go.png</file>
+        <file>icons/plugin_link.png</file>
+        <file>icons/plugin_error.png</file>
+        <file>icons/book_add.png</file>
+        <file>icons/book_delete.png</file>
+        <file>icons/book_edit.png</file>
+        <file>icons/book_open.png</file>
+        <file>icons/book_previous.png</file>
     </qresource>
 </RCC>
