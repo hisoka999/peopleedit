@@ -133,6 +133,20 @@ void MainWindow::saveContent(QModelIndex index)
             //cout<<edit->objectName().toStdString()<<": "<<text.toStdString()<<endl;
         }
     }
+    for (int i=0;i<ui->tab_2->children().count();++i)
+    {
+        const char* name=ui->tab_2->children().at(i)->metaObject()->className();
+        if (name == ui->nameLineEdit->metaObject()->className())
+        {
+            //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
+            QLineEdit *edit =(QLineEdit*)ui->tab_2->children().at(i);
+            QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
+
+            QString text = edit->text();
+            model->setData(model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))),text);
+            //cout<<edit->objectName().toStdString()<<": "<<text.toStdString()<<endl;
+        }
+    }
     for (int i=0;i<ui->tab_3->children().count();++i)
     {
         const char* name=ui->tab_3->children().at(i)->metaObject()->className();
@@ -159,6 +173,18 @@ void MainWindow::updateContent(QModelIndex index)
         {
             //cout<<ui->tab->children().at(i)->objectName().toStdString()<<std::endl;
             QLineEdit *edit =(QLineEdit*)ui->tab->children().at(i);
+            QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
+
+            edit->setText(cont);
+        }
+    }
+    for (int i=0;i<ui->tab_2->children().count();++i)
+    {
+        const char* name=ui->tab_2->children().at(i)->metaObject()->className();
+        if (name == ui->nameLineEdit->metaObject()->className())
+        {
+            //cout<<ui->tab_3->children().at(i)->objectName().toStdString()<<std::endl;
+            QLineEdit *edit =(QLineEdit*)ui->tab_2->children().at(i);
             QString cont = model->index(index.row(),model->fieldIndex(edit->objectName().replace("LineEdit",""))).data().toString();
 
             edit->setText(cont);
