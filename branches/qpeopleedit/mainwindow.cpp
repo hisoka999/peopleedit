@@ -65,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent) :
     for(int i=5;i<model->columnCount();++i)
         ui->tableView->hideColumn(i);
     updateContent(model->index(0,0));
-
+    oldindex = model->index(0,0);
     loader = new PluginLoader(this,"/home/stefan/projects/qpeopleedit/plugins");
 
 }
@@ -220,6 +220,9 @@ void MainWindow::updateContent(QModelIndex index)
 
 MainWindow::~MainWindow()
 {
+    qDebug()<<"delete MainWindow";
+    qDebug()<<oldindex;
+    saveContent(oldindex);
     model->submitAll();
     delete model;
     QSqlDatabase::removeDatabase("QSQLITE");
@@ -272,7 +275,12 @@ void MainWindow::on_actionNew_triggered()
 
 void MainWindow::on_actionDelete_triggered()
 {
+    int row = oldindex.row()-1;
     model->removeRow(oldindex.row());
+    if (row <0) row = 0;
+    oldindex = model->index(row,0);
+    updateContent(oldindex);
+     ui->tableView->setCurrentIndex(oldindex);
 }
 
 void MainWindow::on_actionGoogle_Contacts_triggered()
