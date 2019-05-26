@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun May 8 13:39:49 2011
-**      by: Qt User Interface Compiler version 4.7.0
+** Created by: Qt User Interface Compiler version 5.11.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,24 +10,25 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGraphicsView>
-#include <QtGui/QGridLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QPushButton>
-#include <QtGui/QStatusBar>
-#include <QtGui/QTabWidget>
-#include <QtGui/QTableView>
-#include <QtGui/QToolBar>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+#include <QtGui/QIcon>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -40,6 +40,9 @@ public:
     QAction *actionExit;
     QAction *actionDelete;
     QAction *actionAbout_qt;
+    QAction *actionVCard;
+    QAction *actionVCard_2;
+    QAction *actionOptions;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
@@ -66,6 +69,22 @@ public:
     QLabel *label_12;
     QLabel *label_13;
     QWidget *tab_2;
+    QVBoxLayout *verticalLayout;
+    QFormLayout *formLayout;
+    QLabel *companyLabel;
+    QLineEdit *companyLineEdit;
+    QLabel *companyPhoneLabel;
+    QLineEdit *company_telephoneLineEdit;
+    QLabel *faxLabel;
+    QLineEdit *company_faxLineEdit;
+    QLabel *company_cityLabel;
+    QLineEdit *company_cityLineEdit;
+    QLabel *companyPostalLabel;
+    QLineEdit *company_postalLineEdit;
+    QLabel *companyStreetLabel;
+    QLineEdit *company_streetLineEdit;
+    QLabel *companyHousenumberLabel;
+    QLineEdit *company_housenumberLineEdit;
     QWidget *tab_3;
     QVBoxLayout *verticalLayout_3;
     QGridLayout *gridLayout;
@@ -83,9 +102,12 @@ public:
     QLabel *label_5;
     QLabel *label_6;
     QWidget *widget;
+    QPushButton *openPageButton;
     QTableView *tableView;
     QMenuBar *menuBar;
     QMenu *menuFile;
+    QMenu *menuImport;
+    QMenu *menuExport;
     QMenu *menuEdit;
     QMenu *menuHelp;
     QMenu *menuSync;
@@ -95,41 +117,47 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+            MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
         MainWindow->resize(425, 606);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/base/peopleedit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral(":/base/peopleedit.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         actionNew = new QAction(MainWindow);
-        actionNew->setObjectName(QString::fromUtf8("actionNew"));
+        actionNew->setObjectName(QStringLiteral("actionNew"));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/base/icons/filenew.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/base/icons/book_add.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionNew->setIcon(icon1);
         actionAbout = new QAction(MainWindow);
-        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        actionAbout->setObjectName(QStringLiteral("actionAbout"));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/base/icons/gtk-about.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral(":/base/icons/gtk-about.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionAbout->setIcon(icon2);
         actionExit = new QAction(MainWindow);
-        actionExit->setObjectName(QString::fromUtf8("actionExit"));
+        actionExit->setObjectName(QStringLiteral("actionExit"));
         actionDelete = new QAction(MainWindow);
-        actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
+        actionDelete->setObjectName(QStringLiteral("actionDelete"));
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/base/icons/trashcan_full.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QStringLiteral(":/base/icons/book_delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionDelete->setIcon(icon3);
         actionAbout_qt = new QAction(MainWindow);
-        actionAbout_qt->setObjectName(QString::fromUtf8("actionAbout_qt"));
+        actionAbout_qt->setObjectName(QStringLiteral("actionAbout_qt"));
+        actionVCard = new QAction(MainWindow);
+        actionVCard->setObjectName(QStringLiteral("actionVCard"));
+        actionVCard_2 = new QAction(MainWindow);
+        actionVCard_2->setObjectName(QStringLiteral("actionVCard_2"));
+        actionOptions = new QAction(MainWindow);
+        actionOptions->setObjectName(QStringLiteral("actionOptions"));
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tab = new QWidget();
-        tab->setObjectName(QString::fromUtf8("tab"));
+        tab->setObjectName(QStringLiteral("tab"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -138,34 +166,34 @@ public:
         gridLayout_3 = new QGridLayout(tab);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         nameLabel = new QLabel(tab);
-        nameLabel->setObjectName(QString::fromUtf8("nameLabel"));
+        nameLabel->setObjectName(QStringLiteral("nameLabel"));
 
         gridLayout_3->addWidget(nameLabel, 0, 2, 1, 1);
 
         nameLineEdit = new QLineEdit(tab);
-        nameLineEdit->setObjectName(QString::fromUtf8("nameLineEdit"));
+        nameLineEdit->setObjectName(QStringLiteral("nameLineEdit"));
 
         gridLayout_3->addWidget(nameLineEdit, 0, 3, 1, 1);
 
         forenameLabel = new QLabel(tab);
-        forenameLabel->setObjectName(QString::fromUtf8("forenameLabel"));
+        forenameLabel->setObjectName(QStringLiteral("forenameLabel"));
 
         gridLayout_3->addWidget(forenameLabel, 1, 2, 1, 1);
 
         forenameLineEdit = new QLineEdit(tab);
-        forenameLineEdit->setObjectName(QString::fromUtf8("forenameLineEdit"));
+        forenameLineEdit->setObjectName(QStringLiteral("forenameLineEdit"));
 
         gridLayout_3->addWidget(forenameLineEdit, 1, 3, 1, 1);
 
         nicknameLineEdit = new QLineEdit(tab);
-        nicknameLineEdit->setObjectName(QString::fromUtf8("nicknameLineEdit"));
+        nicknameLineEdit->setObjectName(QStringLiteral("nicknameLineEdit"));
 
         gridLayout_3->addWidget(nicknameLineEdit, 2, 3, 1, 1);
 
         graphicsView = new QGraphicsView(tab);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
         graphicsView->setEnabled(true);
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy1.setHorizontalStretch(0);
@@ -180,17 +208,17 @@ public:
         gridLayout_3->addWidget(graphicsView, 0, 1, 3, 1);
 
         contactnameLineEdit = new QLineEdit(tab);
-        contactnameLineEdit->setObjectName(QString::fromUtf8("contactnameLineEdit"));
+        contactnameLineEdit->setObjectName(QStringLiteral("contactnameLineEdit"));
 
         gridLayout_3->addWidget(contactnameLineEdit, 3, 3, 1, 1);
 
         postalLineEdit = new QLineEdit(tab);
-        postalLineEdit->setObjectName(QString::fromUtf8("postalLineEdit"));
+        postalLineEdit->setObjectName(QStringLiteral("postalLineEdit"));
 
         gridLayout_3->addWidget(postalLineEdit, 4, 3, 1, 1);
 
         pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setObjectName(QStringLiteral("pushButton"));
         QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Maximum);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -201,85 +229,165 @@ public:
         gridLayout_3->addWidget(pushButton, 3, 1, 1, 1);
 
         cityLineEdit = new QLineEdit(tab);
-        cityLineEdit->setObjectName(QString::fromUtf8("cityLineEdit"));
+        cityLineEdit->setObjectName(QStringLiteral("cityLineEdit"));
 
         gridLayout_3->addWidget(cityLineEdit, 5, 3, 1, 1);
 
         streetLineEdit = new QLineEdit(tab);
-        streetLineEdit->setObjectName(QString::fromUtf8("streetLineEdit"));
+        streetLineEdit->setObjectName(QStringLiteral("streetLineEdit"));
 
         gridLayout_3->addWidget(streetLineEdit, 6, 3, 1, 1);
 
         housenumberLineEdit = new QLineEdit(tab);
-        housenumberLineEdit->setObjectName(QString::fromUtf8("housenumberLineEdit"));
+        housenumberLineEdit->setObjectName(QStringLiteral("housenumberLineEdit"));
 
         gridLayout_3->addWidget(housenumberLineEdit, 7, 3, 1, 1);
 
         countryLineEdit = new QLineEdit(tab);
-        countryLineEdit->setObjectName(QString::fromUtf8("countryLineEdit"));
+        countryLineEdit->setObjectName(QStringLiteral("countryLineEdit"));
 
         gridLayout_3->addWidget(countryLineEdit, 8, 3, 1, 1);
 
         label_7 = new QLabel(tab);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setObjectName(QStringLiteral("label_7"));
 
         gridLayout_3->addWidget(label_7, 2, 2, 1, 1);
 
         label_8 = new QLabel(tab);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setObjectName(QStringLiteral("label_8"));
 
         gridLayout_3->addWidget(label_8, 3, 2, 1, 1);
 
         label_9 = new QLabel(tab);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setObjectName(QStringLiteral("label_9"));
 
         gridLayout_3->addWidget(label_9, 4, 2, 1, 1);
 
         label_10 = new QLabel(tab);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setObjectName(QStringLiteral("label_10"));
 
         gridLayout_3->addWidget(label_10, 5, 2, 1, 1);
 
         label_11 = new QLabel(tab);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setObjectName(QStringLiteral("label_11"));
 
         gridLayout_3->addWidget(label_11, 6, 2, 1, 1);
 
         label_12 = new QLabel(tab);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setObjectName(QStringLiteral("label_12"));
 
         gridLayout_3->addWidget(label_12, 7, 2, 1, 1);
 
         label_13 = new QLabel(tab);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setObjectName(QStringLiteral("label_13"));
 
         gridLayout_3->addWidget(label_13, 8, 2, 1, 1);
 
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
-        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        verticalLayout = new QVBoxLayout(tab_2);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        formLayout = new QFormLayout();
+        formLayout->setSpacing(6);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        companyLabel = new QLabel(tab_2);
+        companyLabel->setObjectName(QStringLiteral("companyLabel"));
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, companyLabel);
+
+        companyLineEdit = new QLineEdit(tab_2);
+        companyLineEdit->setObjectName(QStringLiteral("companyLineEdit"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, companyLineEdit);
+
+        companyPhoneLabel = new QLabel(tab_2);
+        companyPhoneLabel->setObjectName(QStringLiteral("companyPhoneLabel"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, companyPhoneLabel);
+
+        company_telephoneLineEdit = new QLineEdit(tab_2);
+        company_telephoneLineEdit->setObjectName(QStringLiteral("company_telephoneLineEdit"));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, company_telephoneLineEdit);
+
+        faxLabel = new QLabel(tab_2);
+        faxLabel->setObjectName(QStringLiteral("faxLabel"));
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, faxLabel);
+
+        company_faxLineEdit = new QLineEdit(tab_2);
+        company_faxLineEdit->setObjectName(QStringLiteral("company_faxLineEdit"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, company_faxLineEdit);
+
+        company_cityLabel = new QLabel(tab_2);
+        company_cityLabel->setObjectName(QStringLiteral("company_cityLabel"));
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, company_cityLabel);
+
+        company_cityLineEdit = new QLineEdit(tab_2);
+        company_cityLineEdit->setObjectName(QStringLiteral("company_cityLineEdit"));
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, company_cityLineEdit);
+
+        companyPostalLabel = new QLabel(tab_2);
+        companyPostalLabel->setObjectName(QStringLiteral("companyPostalLabel"));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, companyPostalLabel);
+
+        company_postalLineEdit = new QLineEdit(tab_2);
+        company_postalLineEdit->setObjectName(QStringLiteral("company_postalLineEdit"));
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, company_postalLineEdit);
+
+        companyStreetLabel = new QLabel(tab_2);
+        companyStreetLabel->setObjectName(QStringLiteral("companyStreetLabel"));
+
+        formLayout->setWidget(5, QFormLayout::LabelRole, companyStreetLabel);
+
+        company_streetLineEdit = new QLineEdit(tab_2);
+        company_streetLineEdit->setObjectName(QStringLiteral("company_streetLineEdit"));
+
+        formLayout->setWidget(5, QFormLayout::FieldRole, company_streetLineEdit);
+
+        companyHousenumberLabel = new QLabel(tab_2);
+        companyHousenumberLabel->setObjectName(QStringLiteral("companyHousenumberLabel"));
+
+        formLayout->setWidget(6, QFormLayout::LabelRole, companyHousenumberLabel);
+
+        company_housenumberLineEdit = new QLineEdit(tab_2);
+        company_housenumberLineEdit->setObjectName(QStringLiteral("company_housenumberLineEdit"));
+
+        formLayout->setWidget(6, QFormLayout::FieldRole, company_housenumberLineEdit);
+
+
+        verticalLayout->addLayout(formLayout);
+
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
-        tab_3->setObjectName(QString::fromUtf8("tab_3"));
+        tab_3->setObjectName(QStringLiteral("tab_3"));
         verticalLayout_3 = new QVBoxLayout(tab_3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetFixedSize);
         gridLayout->setHorizontalSpacing(0);
         gridLayout->setVerticalSpacing(6);
         label = new QLabel(tab_3);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
         emailLineEdit = new QLineEdit(tab_3);
-        emailLineEdit->setObjectName(QString::fromUtf8("emailLineEdit"));
+        emailLineEdit->setObjectName(QStringLiteral("emailLineEdit"));
         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Minimum);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
@@ -289,7 +397,7 @@ public:
         gridLayout->addWidget(emailLineEdit, 0, 1, 1, 1);
 
         writemailButton = new QPushButton(tab_3);
-        writemailButton->setObjectName(QString::fromUtf8("writemailButton"));
+        writemailButton->setObjectName(QStringLiteral("writemailButton"));
         QSizePolicy sizePolicy4(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -300,46 +408,46 @@ public:
         gridLayout->addWidget(writemailButton, 0, 2, 1, 1);
 
         webpageLineEdit = new QLineEdit(tab_3);
-        webpageLineEdit->setObjectName(QString::fromUtf8("webpageLineEdit"));
+        webpageLineEdit->setObjectName(QStringLiteral("webpageLineEdit"));
 
-        gridLayout->addWidget(webpageLineEdit, 1, 1, 1, 2);
+        gridLayout->addWidget(webpageLineEdit, 1, 1, 1, 1);
 
         icqLineEdit = new QLineEdit(tab_3);
-        icqLineEdit->setObjectName(QString::fromUtf8("icqLineEdit"));
+        icqLineEdit->setObjectName(QStringLiteral("icqLineEdit"));
 
         gridLayout->addWidget(icqLineEdit, 2, 1, 1, 2);
 
         aolLineEdit = new QLineEdit(tab_3);
-        aolLineEdit->setObjectName(QString::fromUtf8("aolLineEdit"));
+        aolLineEdit->setObjectName(QStringLiteral("aolLineEdit"));
 
         gridLayout->addWidget(aolLineEdit, 3, 1, 1, 2);
 
         skypeLineEdit = new QLineEdit(tab_3);
-        skypeLineEdit->setObjectName(QString::fromUtf8("skypeLineEdit"));
+        skypeLineEdit->setObjectName(QStringLiteral("skypeLineEdit"));
         skypeLineEdit->setFrame(true);
         skypeLineEdit->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
 
         gridLayout->addWidget(skypeLineEdit, 6, 1, 1, 2);
 
         msnLineEdit = new QLineEdit(tab_3);
-        msnLineEdit->setObjectName(QString::fromUtf8("msnLineEdit"));
+        msnLineEdit->setObjectName(QStringLiteral("msnLineEdit"));
         msnLineEdit->setEchoMode(QLineEdit::Normal);
         msnLineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         gridLayout->addWidget(msnLineEdit, 4, 1, 1, 2);
 
         label_2 = new QLabel(tab_3);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName(QStringLiteral("label_2"));
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
         label_3 = new QLabel(tab_3);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName(QStringLiteral("label_3"));
 
         gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
         label_4 = new QLabel(tab_3);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName(QStringLiteral("label_4"));
         QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy5.setHorizontalStretch(0);
         sizePolicy5.setVerticalStretch(0);
@@ -349,22 +457,27 @@ public:
         gridLayout->addWidget(label_4, 3, 0, 1, 1);
 
         label_5 = new QLabel(tab_3);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setObjectName(QStringLiteral("label_5"));
         sizePolicy5.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
         label_5->setSizePolicy(sizePolicy5);
 
         gridLayout->addWidget(label_5, 4, 0, 1, 1);
 
         label_6 = new QLabel(tab_3);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         gridLayout->addWidget(label_6, 6, 0, 1, 1);
 
         widget = new QWidget(tab_3);
-        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setObjectName(QStringLiteral("widget"));
 
         gridLayout->addWidget(widget, 7, 0, 1, 1);
+
+        openPageButton = new QPushButton(tab_3);
+        openPageButton->setObjectName(QStringLiteral("openPageButton"));
+
+        gridLayout->addWidget(openPageButton, 1, 2, 1, 1);
 
 
         verticalLayout_3->addLayout(gridLayout);
@@ -374,7 +487,7 @@ public:
         gridLayout_2->addWidget(tabWidget, 5, 0, 1, 1);
 
         tableView = new QTableView(centralWidget);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setObjectName(QStringLiteral("tableView"));
         tableView->setAutoFillBackground(false);
         tableView->setDragDropOverwriteMode(true);
         tableView->setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -386,32 +499,68 @@ public:
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 425, 29));
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 425, 25));
         menuFile = new QMenu(menuBar);
-        menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuImport = new QMenu(menuFile);
+        menuImport->setObjectName(QStringLiteral("menuImport"));
+        menuExport = new QMenu(menuFile);
+        menuExport->setObjectName(QStringLiteral("menuExport"));
         menuEdit = new QMenu(menuBar);
-        menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
+        menuEdit->setObjectName(QStringLiteral("menuEdit"));
         menuHelp = new QMenu(menuBar);
-        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+        menuHelp->setObjectName(QStringLiteral("menuHelp"));
         menuSync = new QMenu(menuBar);
-        menuSync->setObjectName(QString::fromUtf8("menuSync"));
+        menuSync->setObjectName(QStringLiteral("menuSync"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         mainToolBar->setMovable(false);
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        QWidget::setTabOrder(tableView, tabWidget);
+        QWidget::setTabOrder(tabWidget, nameLineEdit);
+        QWidget::setTabOrder(nameLineEdit, forenameLineEdit);
+        QWidget::setTabOrder(forenameLineEdit, nicknameLineEdit);
+        QWidget::setTabOrder(nicknameLineEdit, contactnameLineEdit);
+        QWidget::setTabOrder(contactnameLineEdit, postalLineEdit);
+        QWidget::setTabOrder(postalLineEdit, cityLineEdit);
+        QWidget::setTabOrder(cityLineEdit, streetLineEdit);
+        QWidget::setTabOrder(streetLineEdit, housenumberLineEdit);
+        QWidget::setTabOrder(housenumberLineEdit, countryLineEdit);
+        QWidget::setTabOrder(countryLineEdit, graphicsView);
+        QWidget::setTabOrder(graphicsView, pushButton);
+        QWidget::setTabOrder(pushButton, companyLineEdit);
+        QWidget::setTabOrder(companyLineEdit, company_telephoneLineEdit);
+        QWidget::setTabOrder(company_telephoneLineEdit, company_faxLineEdit);
+        QWidget::setTabOrder(company_faxLineEdit, company_cityLineEdit);
+        QWidget::setTabOrder(company_cityLineEdit, company_postalLineEdit);
+        QWidget::setTabOrder(company_postalLineEdit, company_streetLineEdit);
+        QWidget::setTabOrder(company_streetLineEdit, company_housenumberLineEdit);
+        QWidget::setTabOrder(company_housenumberLineEdit, emailLineEdit);
+        QWidget::setTabOrder(emailLineEdit, writemailButton);
+        QWidget::setTabOrder(writemailButton, webpageLineEdit);
+        QWidget::setTabOrder(webpageLineEdit, openPageButton);
+        QWidget::setTabOrder(openPageButton, icqLineEdit);
+        QWidget::setTabOrder(icqLineEdit, aolLineEdit);
+        QWidget::setTabOrder(aolLineEdit, msnLineEdit);
+        QWidget::setTabOrder(msnLineEdit, skypeLineEdit);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuEdit->menuAction());
         menuBar->addAction(menuSync->menuAction());
         menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew);
+        menuFile->addAction(menuImport->menuAction());
+        menuFile->addAction(menuExport->menuAction());
         menuFile->addAction(actionExit);
+        menuImport->addAction(actionVCard);
+        menuExport->addAction(actionVCard_2);
         menuEdit->addAction(actionDelete);
+        menuEdit->addAction(actionOptions);
         menuHelp->addAction(actionAbout);
         menuHelp->addAction(actionAbout_qt);
         mainToolBar->addAction(actionNew);
@@ -420,7 +569,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -428,36 +577,49 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Peopleedit", 0, QApplication::UnicodeUTF8));
-        actionNew->setText(QApplication::translate("MainWindow", "new", 0, QApplication::UnicodeUTF8));
-        actionAbout->setText(QApplication::translate("MainWindow", "about", 0, QApplication::UnicodeUTF8));
-        actionExit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
-        actionDelete->setText(QApplication::translate("MainWindow", "delete", 0, QApplication::UnicodeUTF8));
-        actionAbout_qt->setText(QApplication::translate("MainWindow", "about qt", 0, QApplication::UnicodeUTF8));
-        nameLabel->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
-        forenameLabel->setText(QApplication::translate("MainWindow", "forename", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "...", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("MainWindow", "nickname:", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("MainWindow", "contactname:", 0, QApplication::UnicodeUTF8));
-        label_9->setText(QApplication::translate("MainWindow", "postal:", 0, QApplication::UnicodeUTF8));
-        label_10->setText(QApplication::translate("MainWindow", "city:", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("MainWindow", "street:", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("MainWindow", "house number:", 0, QApplication::UnicodeUTF8));
-        label_13->setText(QApplication::translate("MainWindow", "country:", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "private", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "office", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("MainWindow", "email:", 0, QApplication::UnicodeUTF8));
-        writemailButton->setText(QApplication::translate("MainWindow", "write email", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("MainWindow", "webpage:", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("MainWindow", "icq:", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("MainWindow", "aol:", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("MainWindow", "msn:", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("MainWindow", "skype:", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "online", 0, QApplication::UnicodeUTF8));
-        menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
-        menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
-        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));
-        menuSync->setTitle(QApplication::translate("MainWindow", "Sync", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Peopleedit", nullptr));
+        actionNew->setText(QApplication::translate("MainWindow", "new", nullptr));
+        actionAbout->setText(QApplication::translate("MainWindow", "about", nullptr));
+        actionExit->setText(QApplication::translate("MainWindow", "exit", nullptr));
+        actionDelete->setText(QApplication::translate("MainWindow", "delete", nullptr));
+        actionAbout_qt->setText(QApplication::translate("MainWindow", "about qt", nullptr));
+        actionVCard->setText(QApplication::translate("MainWindow", "vCard", nullptr));
+        actionVCard_2->setText(QApplication::translate("MainWindow", "vCard", nullptr));
+        actionOptions->setText(QApplication::translate("MainWindow", "options", nullptr));
+        nameLabel->setText(QApplication::translate("MainWindow", "Name", nullptr));
+        forenameLabel->setText(QApplication::translate("MainWindow", "forename", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "...", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "nickname:", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "contactname:", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "postal:", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "city:", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "street:", nullptr));
+        label_12->setText(QApplication::translate("MainWindow", "house number:", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "country:", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "private", nullptr));
+        companyLabel->setText(QApplication::translate("MainWindow", "company:", nullptr));
+        companyPhoneLabel->setText(QApplication::translate("MainWindow", "phone:", nullptr));
+        faxLabel->setText(QApplication::translate("MainWindow", "fax:", nullptr));
+        company_cityLabel->setText(QApplication::translate("MainWindow", "company city:", nullptr));
+        companyPostalLabel->setText(QApplication::translate("MainWindow", "company postal:", nullptr));
+        companyStreetLabel->setText(QApplication::translate("MainWindow", "company street:", nullptr));
+        companyHousenumberLabel->setText(QApplication::translate("MainWindow", "company housenumber:", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "office", nullptr));
+        label->setText(QApplication::translate("MainWindow", "email:", nullptr));
+        writemailButton->setText(QApplication::translate("MainWindow", "write email", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "webpage:", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "icq:", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "aol:", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "msn:", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "skype:", nullptr));
+        openPageButton->setText(QApplication::translate("MainWindow", "open page", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "online", nullptr));
+        menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
+        menuImport->setTitle(QApplication::translate("MainWindow", "import", nullptr));
+        menuExport->setTitle(QApplication::translate("MainWindow", "export", nullptr));
+        menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", nullptr));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", nullptr));
+        menuSync->setTitle(QApplication::translate("MainWindow", "Sync", nullptr));
     } // retranslateUi
 
 };

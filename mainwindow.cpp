@@ -66,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->tableView->hideColumn(i);
     updateContent(model->index(0,0));
     oldindex = model->index(0,0);
-    loader = new PluginLoader(this,"/home/stefan/projects/qpeopleedit/plugins");
+    loader = new PluginLoader(this,"plugins");
 
 }
 void MainWindow::syncAction(QAction* action)
